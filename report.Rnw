@@ -637,7 +637,7 @@ latex(tabl.incomg,
 \begin{itemize}
 
 \item Adults who were 
-\Sexpr{tolower(rownames(tabl.marital)[which.max(t.asma.current.marital2.df[1:6,2] *10000)])} at the time of the interview, had the highest asthma prevalence among marital status. Refere to \ref{fig:marital}.
+\Sexpr{tolower(rownames(tabl.marital)[which.max(t.asma.current.marital2.df[1:6,2] *10000)])} at the time of the interview, had the highest asthma prevalence among marital status. Refere to figure \ref{fig:marital}.
 
 \item Those who were \Sexpr{Funct4Interp(type = "or", tabl.marital, "being")} Refere to Table \ref{tab:marital}.
 
