@@ -1,4 +1,3 @@
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % REPORT PREPARED BY: 
 % JOSE A. BARTOLOMEI DIAZ, ALEJANDRO AMILL AND ELISEO ACEVEDO DIAZ
@@ -134,17 +133,31 @@ load(file = File)
 File <- paste(set_File2, "/Object_Child_Prevalence.RData", sep = "" )
 load(file = File)
 
- # Load Adult Population
+if (Sys.info()["sysname"] == "Linux"){
+# Load Adult Population
 File <- paste("/media/truecrypt2/ORP2/Population_Estimates/BRFSS_Pop/Objects/",
-              set_CountryF, "/", set_Years,
+              set_CountryF, "/", set_YearF,
               "/Adult/Object_Adult_Pop_Dist.RData", sep = "")
 load(file = File)  
      
  # Load Child Population
 File <- paste("/media/truecrypt2/ORP2/Population_Estimates/BRFSS_Pop/Objects/",
-              set_CountryF, "/", set_Years,
+              set_CountryF, "/", set_YearF,
               "/Child/Object_Child_Pop_Dist.RData", sep = "")
 load(file = File)  
+} else if (Sys.info()["sysname"] == "Windows"){
+# Load Adult Population
+File <- paste("F:/ORP2/Population_Estimates/BRFSS_Pop/Objects/",
+              set_CountryF, "/", set_YearF,
+              "/Adult/Object_Adult_Pop_Dist.RData", sep = "")
+load(file = File)  
+     
+ # Load Child Population
+File <- paste("F:/ORP2/Population_Estimates/BRFSS_Pop/Objects/",
+              set_CountryF, "/", set_YearF,
+              "/Child/Object_Child_Pop_Dist.RData", sep = "")
+load(file = File)  
+}  
 
 # Load logisitc regresion table results for adults and child 2008-2010
 File <- paste(set_File, "/Objects_Regression_Models.RData", sep = "" )
